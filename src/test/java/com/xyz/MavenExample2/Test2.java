@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+
+//This is my test2
 public class Test2 {
 	public WebDriver driver;
 
@@ -32,7 +34,7 @@ public class Test2 {
 	@Parameters({"word"}) 
 	@Test 
 	public void t3_search(String term) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.name("q")).clear();
 		driver.findElement(By.name("q")).sendKeys(term);
 		driver.findElement(By.name("q")).submit();
@@ -42,9 +44,9 @@ public class Test2 {
 
 	@Test(dependsOnMethods="t3_search")
 	public void t4_result() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.partialLinkText("New York City - Wikipedia")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Reporter.log("Test case 4 suceessfully passed");
 	}
 
